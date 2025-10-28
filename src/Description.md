@@ -69,7 +69,7 @@ src/
 ### 🚀 Future Integrations
 
 * **Playwright (Java)** → for automated UI & API testing
-* **Jenkins CI/CD** → for continuous integration and report generation
+* **GitHub Actions** → for continuous integration and report generation
 * **AI Predictions** → using live match data to estimate future outcomes
 * **Expandable UI** → to include multiple teams, leagues, or historical stats
 
