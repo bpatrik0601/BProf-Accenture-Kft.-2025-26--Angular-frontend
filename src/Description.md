@@ -31,9 +31,9 @@ src/
 │   ├── app.component.ts                    # Root component (embeds the dashboard)
 │   ├── app.component.html                  # Entry template rendering <app-dashboard>
 │   ├── app.component.css                   # Basic root-level styles
-│   ├── app.config.ts
-|   ├── app.routes.ts
-│   └── app.spec.ts
+│   ├── app.config.ts                       # Application-wide / Central configuration settings
+|   ├── app.routes.ts                       # Defines the application's routing structure and navigation paths
+│   └── app.spec.ts                         # Unit tests for the root application component
 |
 ├── index.html                              # Root HTML file loaded by the browser
 ├── styles.css                              # Global CSS (applied across all components)
@@ -69,7 +69,7 @@ src/
 ### 🚀 Future Integrations
 
 * **Playwright (Java)** → for automated UI & API testing
-* **Jenkins CI/CD** → for continuous integration and report generation
+* **GitHub Actions** → for continuous integration and report generation
 * **AI Predictions** → using live match data to estimate future outcomes
 * **Expandable UI** → to include multiple teams, leagues, or historical stats
 
