@@ -6,8 +6,9 @@ This **Angular-based frontend** serves as the visualization layer for a football
 It retrieves live football match data from a public API (e.g., SofaScore) and displays key metrics such as goals, shots, and ball possession.
 The dashboard dynamically updates its UI colors based on the match state:
 
-* 🟢 Green background → when the favorite team is winning
-* 🔴 Red background → when the team is losing
+* 🟢 Green background → when the home team is winning
+* 🔴 Red background → when the away team is losing
+* 🟡 Yellow background → when the result is a tie/draw
 
 This initialized project can be later connected to the **Java + Playwright** backend for automated testing, CI pipelines, and API validation.
 
@@ -55,7 +56,7 @@ src/
 #### 🌐 `FootballService`
 
 * A dedicated **Angular service** that manages HTTP requests.
-* Communicates with the SofaScore (or similar) public API.
+* Communicates with the SofaScore (by default, but similar ones can also be used) public API.
 * Returns structured match data to the `DashboardComponent` for rendering.
 
 #### 🏠 `AppComponent`
