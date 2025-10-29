@@ -4,6 +4,8 @@
 <div *ngFor="let match of matches" class="match-card"
      [ngStyle]="{'background-color': match.homeScore.current > match.awayScore.current ? '#b8f7b8' :
                  match.homeScore.current < match.awayScore.current ? '#f7b8b8' : '#f7f3b8'}">
-  <strong>{{ match.homeTeam.name }}</strong> {{ match.homeScore.current }} -
-  {{ match.awayScore.current }} <strong>{{ match.awayTeam.name }}</strong>
+  <a [routerLink]="['/match', match.id]" style="text-decoration: none; color: inherit; display: block;">
+    <strong>{{ match.homeTeam.name }}</strong> {{ match.homeScore.current }} -
+    {{ match.awayScore.current }} <strong>{{ match.awayTeam.name }}</strong>
+  </a>
 </div>
