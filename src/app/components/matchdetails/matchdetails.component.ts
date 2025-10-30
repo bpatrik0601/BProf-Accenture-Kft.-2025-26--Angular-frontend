@@ -20,6 +20,7 @@ export class MatchDetailComponent implements OnInit {
     this.matchId = this.route.snapshot.paramMap.get('id');
     if (this.matchId) {
       this.http.get(`https://api.sofascore.com/api/v1/event/${this.matchId}/statistics`).subscribe(data => {
+        console.log('Statistics API response:', data);
         this.statistics = data;
       });
     }
