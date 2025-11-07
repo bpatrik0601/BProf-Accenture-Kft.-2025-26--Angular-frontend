@@ -1,0 +1,4 @@
+.match-list {
+  max-height: 80vh;
+  overflow-y: auto; /* vertical scrolling enabled */
+}
