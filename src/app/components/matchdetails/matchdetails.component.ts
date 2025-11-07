@@ -17,12 +17,13 @@ export class MatchDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.matchId = this.route.snapshot.paramMap.get('id');
-    if (this.matchId) {
-      this.http.get(`https://api.sofascore.com/api/v1/event/${this.matchId}/statistics`).subscribe(data => {
-        console.log('Statistics API response:', data);
-        this.statistics = data;
-      });
-    }
+  const id = this.route.snapshot.paramMap.get('id');
+  if (id !== null) {
+    this.matchId = id;
+    this.http.get('/assets/mock/match-statistics.json').subscribe((data: any) => {
+      this.statistics = data[id];
+    });
   }
+}
+
 }

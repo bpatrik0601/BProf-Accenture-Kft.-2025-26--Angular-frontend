@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FootballService {
-  private apiUrl = 'https://api.sofascore.com/api/v1/sport/football/events/live';
+  // private apiUrl = 'https://api.sofascore.com/api/v1/sport/football/events/live';
 
   constructor(private http: HttpClient) {}
 
-  getLiveMatches(): Observable<any> {
-    return this.http.get(this.apiUrl);
+  getMatches(): Observable<any> {
+    return this.http.get('/assets/mock/matches.json');
   }
 }

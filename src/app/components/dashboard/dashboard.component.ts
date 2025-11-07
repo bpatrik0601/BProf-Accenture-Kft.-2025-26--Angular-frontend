@@ -22,13 +22,13 @@ interface Match {
 })
 export class DashboardComponent implements OnInit {
   groupedMatches: { league: string; matches: Match[] }[] = [];
-  statusMessage = 'Loading live matches...';
+  statusMessage = 'Loading matches...';
 
   constructor(private footballService: FootballService) {}
 
   ngOnInit(): void {
-    this.footballService.getLiveMatches().subscribe({
-      next: (data) => {
+    this.footballService.getMatches().subscribe({
+      next: (data: any) => {
         const events: Match[] = data.events || [];
 
         // Grouping by league
@@ -56,11 +56,11 @@ export class DashboardComponent implements OnInit {
         }));
 
         this.statusMessage = this.groupedMatches.length
-          ? 'Live matches loaded'
-          : 'No live matches found.';
+          ? 'Matches loaded'
+          : 'No matches found.';
       },
       error: () => {
-        this.statusMessage = 'Error fetching live data.';
+        this.statusMessage = 'Error fetching data.';
       }
     });
   }
