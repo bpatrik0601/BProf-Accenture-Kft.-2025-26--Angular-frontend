@@ -10,7 +10,7 @@ The dashboard dynamically updates its UI colors based on the match state:
 * Red background → when the home team lost/away team won
 * Yellow background → when the game ended as a draw/tie
 
-This initialized project can be later connected to the **Java + Playwright** backend for automated testing, CI pipelines, and API validation.
+This initialized project can be later connected to the **Java + Playwright** Maven project for automated testing, CI pipelines, and API validation.
 
 ---
 
@@ -32,7 +32,7 @@ src/
 │   │       └── matchdetails.component.css  # Visual styling of the chosen match statistics displaying page
 │   │   
 │   ├── services/
-│   │   └── football.service.ts             # Handles API calls and data fetching
+│   │   └── football.service.ts             # Handles JSON files for data fetching
 │   │
 │   ├── app.component.ts                    # Root component (embeds the dashboard)
 │   ├── app.component.html                  # Entry template rendering <app-dashboard>
@@ -61,7 +61,7 @@ src/
 #### `FootballService`
 
 * A dedicated **Angular service** that manages HTTP requests.
-* Communicates with the SofaScore (or similar) public API.
+* Fetches static JSON data.
 * Returns structured match data to the `DashboardComponent` for rendering.
 
 #### `AppComponent`
@@ -75,8 +75,7 @@ src/
 ### Future Integrations
 
 * **Playwright (Java)** → for automated UI & API testing
-* **Github Actions** → for continuous integration and report generation
-* **AI Predictions** → using live match data to estimate future outcomes
+* **GitHub Actions** → for continuous integration and report generation
 * **Expandable UI** → to include multiple teams, leagues, or historical stats
 
 ---
