@@ -1,9 +1,30 @@
-<h2>⚽ Live Football Dashboard</h2>
+<h2>Football Results Dashboard:</h2>
 <p>{{ statusMessage }}</p>
 
-<div *ngFor="let match of matches" class="match-card"
-     [ngStyle]="{'background-color': match.homeScore.current > match.awayScore.current ? '#b8f7b8' :
-                 match.homeScore.current < match.awayScore.current ? '#f7b8b8' : '#f7f3b8'}">
-  <strong>{{ match.homeTeam.name }}</strong> {{ match.homeScore.current }} -
-  {{ match.awayScore.current }} <strong>{{ match.awayTeam.name }}</strong>
+<div class="match-list">
+  <div *ngFor="let group of groupedMatches">
+    <h3>{{ group.league }}</h3>
+    <div *ngFor="let match of group.matches" class="match-card"
+         [ngStyle]="{'background-color': (match.homeScore ?? 0) > (match.awayScore ?? 0) ? '#b8f7b8' :
+                     (match.homeScore ?? 0) < (match.awayScore ?? 0) ? '#f7b8b8' : '#f7f3b8'}">
+      <a [routerLink]="['/match', match.id]" style="text-decoration: none; color: inherit; display: block;">
+        <p>{{ match.date | date: 'medium' }}</p>
+        <strong>{{ match.homeTeam }}</strong> {{ match.homeScore ?? 0 }} - {{ match.awayScore ?? 0 }} <strong>{{ match.awayTeam }}</strong>
+      </a>
+    </div>
+  </div>
 </div>
+
+
+<style>
+  .match-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+  }
+  .match-card:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+</style>
