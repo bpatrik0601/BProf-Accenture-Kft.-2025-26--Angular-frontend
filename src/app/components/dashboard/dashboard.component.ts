@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 
 interface Match {
   id: number;
-  startTime: string;
+  date: string;
   league?: { name: string };
   homeTeam?: { name: string };
   awayTeam?: { name: string };
@@ -33,7 +33,10 @@ export class DashboardComponent implements OnInit {
 
         // Grouping by league
         const groupedByLeague = events.reduce((acc: { [key: string]: Match[] }, match: Match) => {
-          const leagueName = match.league?.name || 'Unknown League';
+          const leagueName =
+          typeof match.league === 'string'
+            ? match.league
+            : match.league?.name || 'Unknown League';
           if (!acc[leagueName]) {
             acc[leagueName] = [];
           }
@@ -43,7 +46,7 @@ export class DashboardComponent implements OnInit {
 
         // Sorting matches within each league by kickoff time
         for (const league in groupedByLeague) {
-          groupedByLeague[league].sort((a: Match, b: Match) => new Date(a.startTime).getTime() - new Date(b.startTime).getTime());
+          groupedByLeague[league].sort((a: Match, b: Match) => new Date(a.date).getTime() - new Date(b.date).getTime());
         }
 
         // Alphabetical sorting of leagues

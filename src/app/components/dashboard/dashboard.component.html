@@ -5,10 +5,11 @@
   <div *ngFor="let group of groupedMatches">
     <h3>{{ group.league }}</h3>
     <div *ngFor="let match of group.matches" class="match-card"
-         [ngStyle]="{'background-color': (match.homeScore?.current ?? 0) > (match.awayScore?.current ?? 0) ? '#b8f7b8' :
-                     (match.homeScore?.current ?? 0) < (match.awayScore?.current ?? 0) ? '#f7b8b8' : '#f7f3b8'}">
+         [ngStyle]="{'background-color': (match.homeScore ?? 0) > (match.awayScore ?? 0) ? '#b8f7b8' :
+                     (match.homeScore ?? 0) < (match.awayScore ?? 0) ? '#f7b8b8' : '#f7f3b8'}">
       <a [routerLink]="['/match', match.id]" style="text-decoration: none; color: inherit; display: block;">
-        <strong>{{ match.homeTeam?.name }}</strong> {{ match.homeScore?.current ?? 0 }} - {{ match.awayScore?.current ?? 0 }} <strong>{{ match.awayTeam?.name }}</strong>
+        <p>{{ match.date | date: 'medium' }}</p>
+        <strong>{{ match.homeTeam }}</strong> {{ match.homeScore ?? 0 }} - {{ match.awayScore ?? 0 }} <strong>{{ match.awayTeam }}</strong>
       </a>
     </div>
   </div>

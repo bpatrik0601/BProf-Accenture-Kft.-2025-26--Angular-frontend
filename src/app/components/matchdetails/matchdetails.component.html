@@ -1,8 +1,8 @@
-<h2>Match Details</h2>
+<h2>Match Details:</h2>
 
 <div *ngIf="statistics; else loading">
-  <h3>{{ statistics.homeTeam?.name }} vs {{ statistics.awayTeam?.name }}</h3>
-  <p>Score: {{ statistics.homeScore?.current }} - {{ statistics.awayScore?.current }}</p>
+  <h3>{{ statistics.homeTeam }} vs {{ statistics.awayTeam }}</h3>
+  <p>Score: {{ statistics.homeScore }} - {{ statistics.awayScore }}</p>
 
   <h4>Statistics:</h4>
   <ul>
@@ -10,7 +10,7 @@
     <li>Shots on Target: {{ statistics.shotsOnTarget?.home ?? 0 }} - {{ statistics.shotsOnTarget?.away ?? 0 }}</li>
     <li>Possession: {{ statistics.possession?.home ?? 0 }}% - {{ statistics.possession?.away ?? 0 }}%</li>
     <li>Fouls: {{ statistics.fouls?.home ?? 0 }} - {{ statistics.fouls?.away ?? 0 }}</li>
-    <!-- Additional statistics from API -->
+    <!-- Additional statistics from JSON -->
   </ul>
 </div>
 

@@ -10,20 +10,33 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './matchdetails.component.html',
   styleUrls: ['./matchdetails.component.css']
 })
-export class MatchDetailComponent implements OnInit {
-  statistics: any;
-  matchId: string | null = null;
+  export class MatchDetailComponent implements OnInit {
+    statistics: any;
+    matchId: string | null = null;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+    constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
-  ngOnInit(): void {
+    ngOnInit(): void {
   const id = this.route.snapshot.paramMap.get('id');
   if (id !== null) {
     this.matchId = id;
-    this.http.get('/assets/mock/match-statistics.json').subscribe((data: any) => {
-      this.statistics = data[id];
-    });
-  }
-}
 
+    this.http.get('/assets/mock/match-statistics.json').subscribe((statsData: any) => {
+      const stats = statsData[id];
+
+      this.http.get('/assets/mock/matches.json').subscribe((matchData: any) => {
+        const match = matchData.events.find((m: any) => m.id === Number(id));
+
+        this.statistics = {
+          ...stats,
+          homeTeam: match?.homeTeam,
+          awayTeam: match?.awayTeam,
+          homeScore: match?.homeScore,
+          awayScore: match?.awayScore,
+          date: match?.date
+        };
+      });
+    });
+    }
+  }
 }
