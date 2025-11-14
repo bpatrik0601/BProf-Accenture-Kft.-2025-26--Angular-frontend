@@ -1,4 +1,47 @@
+/* Dashboard page formatting */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+}
+
 .match-list {
   max-height: 80vh;
+  margin-top: 20px;
   overflow-y: auto; /* vertical scrolling enabled */
+}
+
+.match-list h3 {
+  font-size: 1.4em;
+  margin: 15px 0 10px;
+  color: #333;
+}
+
+.match-card {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+
+.match-card:hover {
+  transform: scale(1.02);
+  transform-origin: center center;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
+.match-card p {
+  margin: 5px 0;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.match-card strong {
+  font-size: 1.1em;
 }
