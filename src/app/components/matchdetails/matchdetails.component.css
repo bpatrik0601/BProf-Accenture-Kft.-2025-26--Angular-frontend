@@ -1,0 +1,54 @@
+/* Match-details page formatting */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+}
+
+.match-details {
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+.match-details h2, 
+.match-details h3 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.match-details .match-date {
+  font-size: 1.3em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.match-details .score {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.match-details .statistics-title {
+  font-size: 1.4em;
+  margin-top: 25px;
+  margin: 20px 0 10px;
+  text-decoration: underline;
+}
+
+.match-details ul {
+  list-style-position: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: left;
+}
+
+.match-details ul li {
+  margin: 8px 0;
+  font-size: 1.2em;
+  color: #444;
+}

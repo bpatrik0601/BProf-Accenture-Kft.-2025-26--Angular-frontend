@@ -44,6 +44,34 @@
     "awayTeam": "Paris Saint-Germain",
     "homeScore": 3,
     "awayScore": 3
-  }
+  },
+
+  {
+    "id": 2001,
+    "date": "2024-05-01T19:00:00Z",
+    "league": "Bundesliga",
+    "homeTeam": "Borussia Dortmund",
+    "awayTeam": "RB Leipzig",
+    "homeScore": 4,
+    "awayScore": 0
+  },
+  {
+    "id": 3005,
+    "date": "2024-06-10T20:45:00Z",
+    "league": "Serie A",
+    "homeTeam": "Juventus",
+    "awayTeam": "Inter Milan",
+    "homeScore": 1,
+    "awayScore": 1
+  },
+  {
+    "id": 4007,
+    "date": "2024-07-22T18:00:00Z",
+    "league": "Premier League",
+    "homeTeam": "Liverpool",
+    "awayTeam": "Chelsea",
+    "homeScore": 5,
+    "awayScore": 2
+  }  
  ]
 }
