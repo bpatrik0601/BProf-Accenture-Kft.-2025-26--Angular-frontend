@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { delay, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,6 @@ export class FootballService {
   constructor(private http: HttpClient) {}
 
   getMatches(): Observable<any> {
-    return this.http.get('/assets/mock/matches.json');
+    return this.http.get('/assets/mock/matches.json').pipe(delay(2000));
   }
 }

@@ -1,10 +1,11 @@
 <h2>Match Details:</h2>
 
-<div *ngIf="statistics; else loading">
+<div *ngIf="statistics; else loading" class="match-details">
   <h3>{{ statistics.homeTeam }} vs {{ statistics.awayTeam }}</h3>
-  <p>Score: {{ statistics.homeScore }} - {{ statistics.awayScore }}</p>
+  <p class="match-date">{{ statistics.date | date: 'medium' }}</p>
+  <p class="score">Score: {{ statistics.homeScore }} - {{ statistics.awayScore }}</p>
 
-  <h4>Statistics:</h4>
+  <h4 class="statistics-title">Statistics:</h4>
   <ul>
     <li>Goals: {{ statistics.goals?.home ?? 0 }} - {{ statistics.goals?.away ?? 0 }}</li>
     <li>Shots on Target: {{ statistics.shotsOnTarget?.home ?? 0 }} - {{ statistics.shotsOnTarget?.away ?? 0 }}</li>
