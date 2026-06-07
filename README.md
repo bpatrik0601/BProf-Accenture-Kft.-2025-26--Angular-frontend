@@ -5,7 +5,6 @@
 This **Angular-based frontend** provides a simple football statistics dashboard.
 It loads match data from static JSON files and displays key metrics such as goals, shots on target, fouls, and ball possession.
 The UI dynamically changes background colors based on match results:
-
 * Green → home team wins
 * Red → home team loses
 * Yellow → draw
